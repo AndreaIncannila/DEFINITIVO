@@ -15,13 +15,6 @@
   </script>
 </head>
 <body>
-<div style="text-align: center; margin-top: 40px;">
-  <img src="icon.png" alt="MP Tende Logo" style="width: 128px; height: 128px;">
-</div>
-<div id="network-status" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%);
-background-color: #444; color: white; padding: 8px 16px; border-radius: 0 0 6px 6px;
-font-family: sans-serif; font-size: 14px; display: none; z-index: 9999;"></div>
-
 
 <div id="network-status" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%);
 background-color: #444; color: white; padding: 8px 16px; border-radius: 0 0 6px 6px;
@@ -126,6 +119,10 @@ font-family: sans-serif; font-size: 14px; display: none; z-index: 9999;"></div>
   window.addEventListener('offline', updateOnlineStatus);
 </script>
 
+
+<div id="network-status" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+background-color: #444; color: white; padding: 8px 16px; border-radius: 0 0 6px 6px;
+font-family: sans-serif; font-size: 14px; display: none; z-index: 9999;"></div>
 
 <script>
   const statusDiv = document.getElementById('network-status');
