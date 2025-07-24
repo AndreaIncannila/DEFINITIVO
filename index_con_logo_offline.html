@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP Tende - Calcolo Guida Pergola</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Logo -->
+<div style="text-align: center; margin-top: 40px;">
+  <img src="icon.png" alt="MP Tende Logo" style="width: 128px; height: 128px;">
+</div>
+
+<!-- Network Status Notification -->
+<div id="network-status" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+background-color: #444; color: white; padding: 8px 16px; border-radius: 0 0 6px 6px;
+font-family: sans-serif; font-size: 14px; display: none; z-index: 9999;"></div>
+
+<!-- Contenuto originale -->
+<h1 style="text-align: center;">Benvenuto nel Calcolatore MP Tende</h1>
+<div class="container">
+  <!-- Qui puoi inserire tutto il contenuto originale della tua pagina -->
+</div>
+
+<!-- Script per notifiche online/offline -->
+<script>
+  const statusDiv = document.getElementById('network-status');
+  function updateOnlineStatus() {
+    statusDiv.style.display = 'block';
+    statusDiv.textContent = navigator.onLine ? 'Sei online' : 'Sei offline';
+    statusDiv.style.backgroundColor = navigator.onLine ? '#4caf50' : '#f44336';
+    setTimeout(() => { statusDiv.style.display = 'none'; }, 3000);
+  }
+  window.addEventListener('load', updateOnlineStatus);
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+</script>
+
+<!-- Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').then(function (registration) {
+        console.log('ServiceWorker registrato con successo:', registration.scope);
+      }, function (err) {
+        console.log('Registrazione del ServiceWorker fallita:', err);
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
