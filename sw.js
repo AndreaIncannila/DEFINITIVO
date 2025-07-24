@@ -1,11 +1,10 @@
-const CACHE_NAME = 'mp-tende-cache-v1';
+const CACHE_NAME = 'mp-tende-cache-v2';
 const FILES_TO_CACHE = [
   './',
   './index.html',
   './style.css',
-  './script.js',
-  './icon.png',
-  './manifest.json'
+  './manifest.json',
+  './icon.png'
 ];
 
 self.addEventListener('install', event => {
