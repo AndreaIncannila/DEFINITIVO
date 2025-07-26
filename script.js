@@ -1,1 +1,0 @@
-console.log('MP Tende script attivo');
